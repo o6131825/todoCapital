@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="dash-body ">
+    
+  <a class="btn btn-outline-primary text-dark" [routerLink]="['/task']"
+    style="vertical-align: inherit;">Назначить задачу
+  </a>
+  </div>
+<div class="card">
+
+  <div class="card-header card-header-warning">
+    <h4 class="card-title">Список задач</h4>
+
+  </div>
+  <div class="card-body table-responsive">
+    <table class="table table-hover">
+      <thead class="text-warning">
+        
+        <th>Заглавие </th>
+        <th>Текст</th>
+        <th>Кому</th>
+        <th>Решено</th>
+
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasklistServise.taskList">
+          <ng-container *ngIf="isAllowed(task.toUser) ">
+          <td class="taskName">{{task.name}}</td>
+          <td>{{task.descr}} </td>
+          <td>{{task.toUser}} </td>
+
+          <td >
+            <input  name="taskDonne"  class="form-check-input" type="checkbox" [(ngModel)]="task.taskDonne" (change)="checkboxCheck2([(task._id)])" >
+                       
+          </td>
+
+          
+        </ng-container>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>

@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="card">
+
+  <div class="card-header card-header-warning">
+    <h4 class="card-title">Добавить задачу</h4>
+
+  </div>
+
+  <form (submit)="taskCreateClick()">
+  <div class="form-label-group">
+
+    <input type="text" [(ngModel)]="name" class="form-control" placeholder="Заглавие" name="name"><br>
+    <textarea type="text" [(ngModel)]="descr" class="form-control" placeholder="Текст задачи" name="descr"></textarea><br>
+    <!-- <input type="email" [(ngModel)]="toUser" class="form-control" placeholder="Кому" name="toUser"><br> -->
+    
+    <p><select  name="toUser" type="text" [(ngModel)]="toUser" class="form-control">
+      
+       <option *ngFor="let user of authService.user" value="{{user.name}}">{{user.name}}</option>
+       
+      
+     </select></p>
+
+
+
+
+  <button class="btn btn-success" type="submit">Создать задачу</button>
+
+  <button class="btn btn-outline-primary" [routerLink]="['/tasklist']">Задачи пользователя</button>
+
+  
+
+  </div>
+  </form>
+  </div>
+</div>

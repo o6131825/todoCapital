@@ -1,0 +1,13 @@
+<div class="container">
+
+
+  <h1>Форма авторизации</h1>
+  <form (submit)="userLoginClick()">
+  <div class="form-label-group">
+
+    <input type="text" [(ngModel)]="login" class="form-control" placeholder="Введите логин" name="login"><br>
+    <input type="password" [(ngModel)]="password" class="form-control" placeholder="Введите пароль" name="password"><br>
+  <button class="btn btn-success" type="submit">Войти в кабинет</button>
+  </div>
+  </form>
+  </div>

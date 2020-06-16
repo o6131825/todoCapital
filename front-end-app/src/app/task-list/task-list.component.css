@@ -1,0 +1,18 @@
+.taskName{
+    width: 20%;
+}
+
+.form-check-input {
+    display: flex;
+    align-items: flex-end;
+    
+    height: 20px;
+    width: 100px;
+
+
+}
+
+.text-dark{
+    margin-bottom: 20px;
+    margin-right: 10px;
+}

@@ -26,7 +26,7 @@ export class TaskService {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post(
-    'http://localhost:3000/account/task',
+    'account/task',
     task,
     {headers}).pipe(map((response: any) => response.json()));
   }
@@ -35,14 +35,14 @@ export class TaskService {
     
     const headers = new Headers();
     return this.http.get(
-      'http://localhost:3000/account/tasklist',
+      'account/tasklist',
       {headers}).pipe(map((response: any) => response.json()));
   }
 
   getTaskById(id: string): Observable<Task> {
     const headers = new Headers();
     return this.http.get(
-      `http://localhost:3000/account/tasklist/${id}`,
+      `account/tasklist/${id}`,
       {headers}).pipe(map((response: any) => response.json()));
     
   }
@@ -51,7 +51,7 @@ export class TaskService {
     const headers = new Headers();
     
     return this.http.put(
-    `http://localhost:3000/account/tasklist/${id}`,
+    `account/tasklist/${id}`,
       {headers}).pipe(map((response: any) => response.json()));
     
       

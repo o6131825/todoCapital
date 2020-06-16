@@ -26,7 +26,7 @@ registerUser(user: any){
   const headers = new Headers();
   headers.append('Content-Type', 'application/json');
   return this.http.post(
-  'http://localhost:3000/account/reg',
+  'account/reg',
   user,
   {headers}).pipe(map((response: any) => response.json()));
 }
@@ -37,7 +37,7 @@ authUser(user){
   const headers = new Headers();
   headers.append('Content-Type', 'application/json');
   return this.http.post(
-  'http://localhost:3000/account/auth',
+  'account/auth',
   user,
   {headers}).pipe(map((response: any) => response.json()));
 }
@@ -67,7 +67,7 @@ isLoggedIn(){
 getUserList(){
   const headers = new Headers();
   return this.http.get(
-    'http://localhost:3000/account/task',
+    'account/task',
 
     {headers}).pipe(map((response: any) => response.json()));
 }
